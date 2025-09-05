@@ -1,3 +1,9 @@
+# THIS IS A FORK OF THE REPO
+
+- CHANGE MINIMALLY IN THIS REPO
+- WE ARE CURRENTLY ON release-0.16 branch - not main
+- Use guide in flaivy-repo k8s/monitoring/README.md
+
 # kube-prometheus
 
 [![Build Status](https://github.com/prometheus-operator/kube-prometheus/workflows/ci/badge.svg)](https://github.com/prometheus-operator/kube-prometheus/actions)
@@ -13,14 +19,14 @@ The content of this project is written in [jsonnet](http://jsonnet.org/). This p
 
 Components included in this package:
 
-* The [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator)
-* Highly available [Prometheus](https://prometheus.io/)
-* Highly available [Alertmanager](https://github.com/prometheus/alertmanager)
-* [Prometheus node-exporter](https://github.com/prometheus/node_exporter)
-* [Prometheus blackbox-exporter](https://github.com/prometheus/blackbox_exporter)
-* [Prometheus Adapter for Kubernetes Metrics APIs](https://github.com/kubernetes-sigs/prometheus-adapter)
-* [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics)
-* [Grafana](https://grafana.com/)
+- The [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator)
+- Highly available [Prometheus](https://prometheus.io/)
+- Highly available [Alertmanager](https://github.com/prometheus/alertmanager)
+- [Prometheus node-exporter](https://github.com/prometheus/node_exporter)
+- [Prometheus blackbox-exporter](https://github.com/prometheus/blackbox_exporter)
+- [Prometheus Adapter for Kubernetes Metrics APIs](https://github.com/kubernetes-sigs/prometheus-adapter)
+- [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics)
+- [Grafana](https://grafana.com/)
 
 This stack is meant for cluster monitoring, so it is pre-configured to collect metrics from all Kubernetes components. In addition to that it delivers a default set of dashboards and alerting rules. Many of the useful dashboards and alerts come from the [kubernetes-mixin project](https://github.com/kubernetes-monitoring/kubernetes-mixin), similar to this project it provides composable jsonnet as a library for users to customize to their needs.
 
@@ -30,8 +36,8 @@ You will need a Kubernetes cluster, that's it! By default it is assumed, that th
 
 This means the kubelet configuration must contain these flags:
 
-* `--authentication-token-webhook=true` This flag enables, that a `ServiceAccount` token can be used to authenticate against the kubelet(s). This can also be enabled by setting the kubelet configuration value `authentication.webhook.enabled` to `true`.
-* `--authorization-mode=Webhook` This flag enables, that the kubelet will perform an RBAC request with the API to determine, whether the requesting entity (Prometheus in this case) is allowed to access a resource, in specific for this project the `/metrics` endpoint. This can also be enabled by setting the kubelet configuration value `authorization.mode` to `Webhook`.
+- `--authentication-token-webhook=true` This flag enables, that a `ServiceAccount` token can be used to authenticate against the kubelet(s). This can also be enabled by setting the kubelet configuration value `authentication.webhook.enabled` to `true`.
+- `--authorization-mode=Webhook` This flag enables, that the kubelet will perform an RBAC request with the API to determine, whether the requesting entity (Prometheus in this case) is allowed to access a resource, in specific for this project the `/metrics` endpoint. This can also be enabled by setting the kubelet configuration value `authorization.mode` to `Webhook`.
 
 This stack provides [resource metrics](https://github.com/kubernetes/metrics#resource-metrics-api) by deploying
 the [Prometheus Adapter](https://github.com/kubernetes-sigs/prometheus-adapter).
@@ -46,7 +52,7 @@ The following Kubernetes versions are supported and work as we test against thes
 > In CI we will be testing only last two releases and main branch on a regular basis.
 
 | kube-prometheus stack                                                                      | Kubernetes 1.29 | Kubernetes 1.30 | Kubernetes 1.31 | Kubernetes 1.32 | Kubernetes 1.33 | Kubernetes 1.34 |
-|--------------------------------------------------------------------------------------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
+| ------------------------------------------------------------------------------------------ | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- |
 | [`release-0.14`](https://github.com/prometheus-operator/kube-prometheus/tree/release-0.14) | ✔               | ✔               | ✔               | x               | x               | x               |
 | [`release-0.15`](https://github.com/prometheus-operator/kube-prometheus/tree/release-0.15) | x               | x               | ✔               | ✔               | ✔               | x               |
 | [`release-0.16`](https://github.com/prometheus-operator/kube-prometheus/tree/release-0.16) | x               | x               | ✔               | ✔               | ✔               | ✔               |
@@ -58,7 +64,7 @@ This project is intended to be used as a library (i.e. the intent is not for you
 
 Though for a quickstart a compiled version of the Kubernetes [manifests](manifests) generated with this library (specifically with `example.jsonnet`) is checked into this repository in order to try the content out quickly. To try out the stack un-customized run:
 
-* Create the monitoring stack using the config in the `manifests` directory:
+- Create the monitoring stack using the config in the `manifests` directory:
 
   ```shell
   # Create the namespace and CRDs, and then wait for them to be available before creating the remaining resources
@@ -77,7 +83,7 @@ Alternatively, the resources in both folders can be applied with a single comman
 `kubectl apply --server-side -f manifests/setup -f manifests`, but it may be necessary to run the command multiple times for all components to
 be created successfully.
 
-* To teardown the stack:
+- To teardown the stack:
 
   ```shell
   kubectl delete --ignore-not-found=true -f manifests/ -f manifests/setup
