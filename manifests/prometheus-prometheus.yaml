@@ -36,7 +36,7 @@ spec:
   resources:
     requests:
       memory: 400Mi
-  retention: 30d
+  retention: 90d
   ruleNamespaceSelector: {}
   ruleSelector: {}
   scrapeConfigNamespaceSelector: {}
