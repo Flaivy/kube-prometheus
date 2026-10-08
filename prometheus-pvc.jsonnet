@@ -11,10 +11,7 @@ local kp =
         namespace: 'monitoring',
       },
       prometheusOperator+: {
-        configReloaderResources: {
-          limits: { cpu: '50m', memory: '' },
-          requests: { cpu: '', memory: '' },
-        },
+        configReloaderResources+: { limits+: { cpu: '50m' } },
       },
       kubeStateMetrics+: {
         kubeRbacProxyMain+: {
