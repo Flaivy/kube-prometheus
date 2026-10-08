@@ -32,6 +32,7 @@ spec:
         - --prometheus-config-reloader=quay.io/prometheus-operator/prometheus-config-reloader:v0.85.0
         - --kubelet-endpoints=true
         - --kubelet-endpointslice=false
+        - --config-reloader-cpu-limit=50m
         env:
         - name: GOGC
           value: "30"
