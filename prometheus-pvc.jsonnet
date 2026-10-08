@@ -15,7 +15,7 @@ local kp =
       },
       kubeStateMetrics+: {
         kubeRbacProxyMain+: {
-          resources+: { limits+: { cpu: '100m' } },
+          resources+: { limits+: { cpu: '250m' } },
         },
       },
       grafana+: {
