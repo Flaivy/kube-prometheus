@@ -10,6 +10,17 @@ local kp =
       common+: {
         namespace: 'monitoring',
       },
+      prometheusOperator+: {
+        configReloaderResources+: { limits+: { cpu: '50m' } },
+      },
+      kubeStateMetrics+: {
+        kubeRbacProxyMain+: {
+          resources+: { limits+: { cpu: '100m' } },
+        },
+      },
+      grafana+: {
+        resources+: { limits+: { cpu: '500m' } },
+      },
     },
 
     prometheus+:: {
