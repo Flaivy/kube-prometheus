@@ -32,10 +32,16 @@ spec:
   podMonitorSelector: {}
   probeNamespaceSelector: {}
   probeSelector: {}
-  replicas: 2
+  query:
+    maxConcurrency: 4
+    maxSamples: 5000000
+    timeout: 1m
+  replicas: 1
   resources:
+    limits:
+      memory: 3.5Gi
     requests:
-      memory: 400Mi
+      memory: 3.5Gi
   retention: 90d
   ruleNamespaceSelector: {}
   ruleSelector: {}
