@@ -35,7 +35,7 @@ local kp =
       },
       prometheusAdapter+: {
         resources: {
-          requests: { cpu: '102m', memory: '96Mi' },
+          requests: { cpu: '10m', memory: '96Mi' },
           limits: { cpu: '250m', memory: '96Mi' },
         },
       },
