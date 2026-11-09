@@ -17,6 +17,7 @@ spec:
       namespace: monitoring
       port: web
   enableFeatures: []
+  enableRemoteWriteReceiver: true
   externalLabels: {}
   image: quay.io/prometheus/prometheus:v3.5.0
   nodeSelector:
@@ -32,10 +33,16 @@ spec:
   podMonitorSelector: {}
   probeNamespaceSelector: {}
   probeSelector: {}
-  replicas: 2
+  query:
+    maxConcurrency: 4
+    maxSamples: 5000000
+    timeout: 1m
+  replicas: 1
   resources:
+    limits:
+      memory: 2560Mi
     requests:
-      memory: 400Mi
+      memory: 2560Mi
   retention: 90d
   ruleNamespaceSelector: {}
   ruleSelector: {}
