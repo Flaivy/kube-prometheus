@@ -16,7 +16,9 @@ spec:
       name: alertmanager-main
       namespace: monitoring
       port: web
-  enableFeatures: []
+  enableFeatures:
+  - exemplar-storage
+  enableRemoteWriteReceiver: true
   externalLabels: {}
   image: quay.io/prometheus/prometheus:v3.5.0
   nodeSelector:

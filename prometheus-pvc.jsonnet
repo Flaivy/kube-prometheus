@@ -82,6 +82,10 @@ local kp =
             timeout: '1m',
           },
 
+          // Tempo's metrics-generator writes span metrics here.
+          enableRemoteWriteReceiver: true,
+          enableFeatures: ['exemplar-storage'],
+
           // Reference info: https://github.com/coreos/prometheus-operator/blob/master/Documentation/user-guides/storage.md
           // By default (if the following 'storage.volumeClaimTemplate' isn't created), prometheus will be created with an EmptyDir for the 'prometheus-k8s-db' volume (for the prom tsdb).
           // This 'storage.volumeClaimTemplate' causes the following to be automatically created (via dynamic provisioning) for each prometheus pod:
