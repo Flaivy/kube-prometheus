@@ -40,9 +40,9 @@ spec:
   replicas: 1
   resources:
     limits:
-      memory: 3Gi
+      memory: 2560Mi
     requests:
-      memory: 3Gi
+      memory: 2560Mi
   retention: 90d
   ruleNamespaceSelector: {}
   ruleSelector: {}
