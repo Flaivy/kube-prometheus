@@ -43,10 +43,10 @@ spec:
         resources:
           limits:
             cpu: 250m
-            memory: 180Mi
+            memory: 80Mi
           requests:
-            cpu: 102m
-            memory: 180Mi
+            cpu: 20m
+            memory: 80Mi
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
@@ -81,11 +81,11 @@ spec:
           name: https
         resources:
           limits:
-            cpu: 20m
+            cpu: 50m
             memory: 40Mi
           requests:
             cpu: 10m
-            memory: 20Mi
+            memory: 40Mi
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
