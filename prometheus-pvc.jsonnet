@@ -84,7 +84,6 @@ local kp =
 
           // Tempo's metrics-generator writes span metrics here.
           enableRemoteWriteReceiver: true,
-          enableFeatures: ['exemplar-storage'],
 
           // Reference info: https://github.com/coreos/prometheus-operator/blob/master/Documentation/user-guides/storage.md
           // By default (if the following 'storage.volumeClaimTemplate' isn't created), prometheus will be created with an EmptyDir for the 'prometheus-k8s-db' volume (for the prom tsdb).
