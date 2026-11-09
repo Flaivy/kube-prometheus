@@ -49,8 +49,8 @@ local kp =
       prometheus+: {
         replicas: 1,
         resources: {
-          requests: { memory: '3.5Gi' },
-          limits: { memory: '3.5Gi' },
+          requests: { memory: '3Gi' },
+          limits: { memory: '3Gi' },
         },
       },
     },
