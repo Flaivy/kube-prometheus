@@ -21,6 +21,31 @@ local kp =
       grafana+: {
         resources+: { limits+: { cpu: '500m' } },
       },
+      nodeExporter+: {
+        resources: {
+          requests: { cpu: '20m', memory: '80Mi' },
+          limits: { cpu: '250m', memory: '80Mi' },
+        },
+        kubeRbacProxy+: {
+          resources: {
+            requests: { cpu: '10m', memory: '40Mi' },
+            limits: { cpu: '50m', memory: '40Mi' },
+          },
+        },
+      },
+      prometheusAdapter+: {
+        resources: {
+          requests: { cpu: '10m', memory: '96Mi' },
+          limits: { cpu: '250m', memory: '96Mi' },
+        },
+      },
+      alertmanager+: {
+        replicas: 1,
+        resources: {
+          requests: { cpu: '4m', memory: '64Mi' },
+          limits: { cpu: '100m', memory: '64Mi' },
+        },
+      },
       prometheus+: {
         replicas: 1,
         resources: {
