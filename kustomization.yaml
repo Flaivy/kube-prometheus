@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
 - ./manifests/alertmanager-alertmanager.yaml
 - ./manifests/alertmanager-networkPolicy.yaml
-- ./manifests/alertmanager-podDisruptionBudget.yaml
 - ./manifests/alertmanager-prometheusRule.yaml
 - ./manifests/alertmanager-secret.yaml
 - ./manifests/alertmanager-service.yaml
