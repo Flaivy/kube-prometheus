@@ -34,8 +34,8 @@ spec:
   probeNamespaceSelector: {}
   probeSelector: {}
   query:
-    maxConcurrency: 4
-    maxSamples: 5000000
+    maxConcurrency: 2
+    maxSamples: 2500000
     timeout: 1m
   replicas: 1
   resources:

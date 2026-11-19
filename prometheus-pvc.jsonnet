@@ -77,8 +77,8 @@ local kp =
 
           // A query over these caps fails; the process stays under its memory limit.
           query: {
-            maxSamples: 5000000,
-            maxConcurrency: 4,
+            maxSamples: 2500000,
+            maxConcurrency: 2,
             timeout: '1m',
           },
 
